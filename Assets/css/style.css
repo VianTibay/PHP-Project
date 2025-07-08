@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+body{
+    background-color: black;
+}
+.header{
+    outline: 1px red double;
+    display: flex;
+    margin: 1em;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 1rem;
+    color: white;
+ & > p{
+    outline: 1px blue outset;
+    margin: 1rem;
+    padding:  1rem;
+    color:white;
+
+ }
+
+}
+ul{
+    outline:  1px purple outset;
+    display: flex;
+    color:  white;
+    list-style: none;
+     a{
+text-decoration: none;
+color: white;
+margin: 1rem;
+padding: 1rem;
+
+    }
+    
+}
