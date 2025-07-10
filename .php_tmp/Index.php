@@ -1,28 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./Assets/css/style.css">
-    <title>Inventory System</title>
-</head>
-<body>
-    <div class ="header">
-    <h1>Welcome to the Inventory System</h1>
-    <p>This is a simple inventory management system.</p>
-    </div>
-    <ul>
-        <li>
-            <a href="add_item.php">Add Item</a></li>
-        <li>
-            <a href="view_items.php">View Items</a></li>
-        <li>
-            <a href="update_item.php">Update Item</a></li>
-        <li>
-            <a href="delete_item.php">Delete Item</a></li>
-    </ul> 
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "testing";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("❌ Connection failed: " . $conn->connect_error);
+} else {
+    echo "✅ Connected to database<br>";
+}
+
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") {
+    $name  = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+
+    echo "📝 Received data: $name, $email<br>";
+
+    $stmt = $conn->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
+    if (!$stmt) {
+        die("❌ Prepare failed: " . $conn->error);
+    }
+
+    $stmt->bind_param("ss", $name, $email);
+
+    if ($stmt->execute()) {
+        echo "✅ Successfully inserted into database!";
+    } else {
+        echo "❌ Execute failed: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html>
+<head><title>Form Insert</title></head>
+<body>
+  <form method="POST" action="">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>
