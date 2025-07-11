@@ -40,9 +40,9 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Sidebar (Desktop) -->
   <aside class="sidebar" id="sidebar">
-    <h2>Inventory <?php echo htmlspecialchars($_SESSION['username'])?></h2>
+    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username'])?></h2>
     <ul>
-      <li><a href="#"><i class="fas fa-plus"></i>Profile</a></li>
+      <li><a href="./profile.php"><i class="fas fa-plus"></i>Profile</a></li>
       <li><a href="./addItem.php"><i class="fas fa-plus"></i> Add Item</a></li>
       <li><a href="./updateItem.php"><i class="fas fa-edit"></i> Update Item</a></li>
       <li><a href="./viewItems.php"><i class="fas fa-boxes"></i> View Inventory</a></li>

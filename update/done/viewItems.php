@@ -24,13 +24,6 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    while ($row = $result->fetch_assoc()) {
-      echo "<tr>";
-      echo "<td data-label='Item Name'>" . htmlspecialchars($row['ITEM_NAME']) . "</td>";
-      echo "<td data-label='Quantity'>" . $row['QUANTITY'] . "</td>";
-      echo "<td data-label='Date Added'>" . $row['DATE_ADDED'] . "</td>";
-      echo "</tr>";
-    }
   ?>
 </tbody>
 <!DOCTYPE html>
@@ -107,7 +100,13 @@
           </tr>
         </thead>
         <tbody>
-        
+            <?php while ($row = $result->fetch_assoc()){ ?>
+            <tr>
+                <td><?php echo htmlspecialchars($row['ITEM_NAME']);?></td>
+                <td><?php echo $row['QUANTITY']; ?></td>
+                <td><?php echo $row['DATE_ADDED']; ?></td>
+            </tr>
+            <?php }?>
         </tbody>
       </table>
     </div>
