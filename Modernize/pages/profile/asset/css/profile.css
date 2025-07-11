@@ -1,0 +1,18 @@
+body:not(.light) .card {
+  background-color: #1f2937; /* dark card background */
+  color: white;
+  border: 1px solid #444;
+}
+
+body:not(.light) .card p {
+  color: white;
+}
+
+body.light .card {
+  background-color: #ffffff;
+  color: #111;
+}
+
+body.light .card p {
+  color: #111;
+}

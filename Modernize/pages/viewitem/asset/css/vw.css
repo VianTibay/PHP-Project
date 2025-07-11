@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+  .table-responsive table thead {
+    display: none;
+  }
+
+  .table-responsive table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #1f2937;
+  }
+
+  .table-responsive table tbody tr td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #444;
+  }
+
+  .table-responsive table tbody tr td:last-child {
+    border-bottom: none;
+  }
+
+  .table-responsive table tbody tr td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #00bcd4;
+  }
+}
