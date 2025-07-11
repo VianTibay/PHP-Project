@@ -1,0 +1,29 @@
+body:not(.light) {
+  .dashboard-cards {
+    .card {
+      background-color: #1e2a3a;
+      color: #fff;
+
+      p {
+        color: #00d9ff;
+      }
+
+      &:hover {
+        background-color: #29394f;
+      }
+    }
+  }
+}
+
+body.light-mode {
+  .dashboard-cards {
+    .card {
+      background-color: #f0f0f0;
+      color: #222;
+
+      p {
+        color: #0066cc;
+      }
+    }
+  }
+}
