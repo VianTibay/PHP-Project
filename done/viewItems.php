@@ -24,13 +24,6 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    while ($row = $result->fetch_assoc()) {
-      echo "<tr>";
-      echo "<td data-label='Item Name'>" . htmlspecialchars($row['ITEM_NAME']) . "</td>";
-      echo "<td data-label='Quantity'>" . $row['QUANTITY'] . "</td>";
-      echo "<td data-label='Date Added'>" . $row['DATE_ADDED'] . "</td>";
-      echo "</tr>";
-    }
   ?>
 </tbody>
 <!DOCTYPE html>
@@ -104,10 +97,23 @@
             <th>Item Name</th>
             <th>Quantity</th>
             <th>Date Added</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-        
+            <?php while ($row = $result->fetch_assoc()) { ?>
+          <tr>
+            <td><?php echo htmlspecialchars($row['ITEM_NAME']); ?></td>
+            <td><?php echo $row['QUANTITY']; ?></td>
+            <td><?php echo $row['DATE_ADDED']; ?></td>
+                <td>
+                    <form method="POST" action="deleteItem.php" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                    <input type="hidden" name="item_id" value="<?php echo $row['ID']; ?>">
+                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                  </form>
+                </td>
+              </tr>
+            <?php } ?>
         </tbody>
       </table>
     </div>
