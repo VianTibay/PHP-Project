@@ -34,10 +34,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header("Location: dashboard.php");
             exit();
         }else{
-            echo "Invalid Password!";
+            echo '
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Registration Result</title>
+            <link rel="stylesheet" href="../Assets/css/userRecord.css">
+        </head>
+        <body>
+            <p>Passwords do not match!</p>
+            <a href="login.php">Back to Login</a>
+        </body>
+        </html>';
         }
     }else{
-        echo "Username Not Found!";
+        echo '
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Registration Result</title>
+            <link rel="stylesheet" href="../Assets/css/userRecord.css">
+        </head>
+        <body>
+            <p>Username not Found!</p>
+            <a href="login.php">Back to Registration</a>
+        </body>
+        </html>';
     }
 
     $stmt->close();
