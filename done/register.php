@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <form action="./userRecord.php" method="get" class="register-form">
+  <form action="./userRecord.php" method="post" class="register-form">
     <h2>Create Account</h2>
     <div class="input-group">
       <i class="fa fa-user"></i>
