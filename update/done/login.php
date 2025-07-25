@@ -9,7 +9,7 @@
         <title>Inventory Login</title>
     </head>
     <body>
-<form action="userLogin.php" method="post">
+<form action="/update/done/userLogin.php" method="post">
     <h2>Inventory Login</h2>
 
     <div class="input-group">

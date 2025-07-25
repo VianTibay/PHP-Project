@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
     $inputUsername = $_POST['username'];
     $inputPassword = $_POST['password'];    
 

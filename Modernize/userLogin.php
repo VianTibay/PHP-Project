@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "user";
+$dbname = "user_system"; // Updated to match the new database name
 // Create connection
 $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
