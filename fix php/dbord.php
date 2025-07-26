@@ -20,8 +20,11 @@ if (!isset($_SESSION['username'])) {
 <body>
     <div class="container">
         <h1>User Dashboard</h1> 
-        <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+      
+         <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p> 
         <a href="logout.php">Logout</a>
+        <a href="profile.php">Profile</a>
+        <h1>kayo na bahala sa design dito hehe basta may backend to</h1>
     </div>
 </body>
 </html>
